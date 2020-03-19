@@ -1,0 +1,31 @@
+<ng-container>
+  <div >
+    <p [ngClass]="TestMethod" >ng Class</p>
+    <p [ngStyle]="Stylemodel">ng style</p>
+
+  </div>
+</ng-container>
+
+<button  mat-button color="primary" (click)="functionOnWhichRedirectionShouldHappen()">DONE</button>
+
+    <ul>
+      <li *ngFor=" let books of form; let i = index">
+       <pre>{{i+1}}: {{books.payload | json }}</pre>
+       <button  mat-raised-button class="updateFirstNameButton" color="primary" (click)="updateItem(books.key)">Update First Name</button><br>
+       <ng-container *ngIf = "input && (keyForChange === books.key )" >
+         <textarea  class="changeFirstName"  placeholder="Edit First Name" [(ngModel)]="firstNameChange"></textarea>
+       <div>
+
+        <button  mat-button  color="primary" (click)="updateItemOne(books.payload.key)">change</button>
+       </div> <br>
+      </ng-container>
+      <button  mat-button color="accent" (click)="deleteItem(books.key)"> Delete</button></li></ul>
+      <!--
+{{ msg }}
+<app-directive-child (messageEvent)="receiveMessage($event)" [childMessage]="parentMessage()" ></app-directive-child>
+{{mesg}}
+-->
+<button mat-raised-button color="accent" (click)="logOutFunction()"> LogOut</button>
+<button mat-raised-button color="accent" (click)="httpPostExample()">Post</button>
+<button mat-raised-button color="accent" (click)="trySubjectFunction()">trySubjectFunction</button>
+

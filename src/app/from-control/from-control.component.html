@@ -1,0 +1,69 @@
+<!--
+<form class="example-form" [formGroup]="profileForm">
+
+   <div><mat-form-field class="example-full-width">
+
+    <input matInput placeholder="username"  formControlName="firstName"  >
+     </mat-form-field></div>
+
+   <div><mat-form-field class="example-full-width">
+
+    <input matInput placeholder="password"  formControlName="lastName">
+     </mat-form-field ></div>
+     <button btn btn-success >login</button>
+</form>
+<form class="example-form"  [formGroup]="profileForm">
+  <div><mat-form-field class="example-full-width">
+    <input matInput placeholder="username" [formControl]="firstName" >
+  </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="password"></textarea>
+    </mat-form-field></div>
+  <div>
+    <mat-card> Value: {{ firstName.value }}</mat-card>
+  </div>
+  <div *ngIf="name.dirty; else elseblock"  ><button  mat-button>submit</button></div>
+  <ng-template #elseblock  ></ng-template>
+
+  <button [disabled]='!name.dirty' mat-button>submit</button>
+
+</form>
+-->
+<div class="container">
+  <h1>Login Here</h1>
+
+  <mat-card class="loginValues">
+  <form #fromcontrol="ngForm" id="tdfLoginForm">
+    <div class="form-group" >
+      <textarea matInput placeholder="User Name" class="textareaUserName" required  minlength="4" #userName="ngModel"  [(ngModel)]="model.userName"  ngModel email name="email"></textarea><br>
+      <ng-container *ngIf="( userName.errors && userName.dirty)">
+        <mat-error  class="textareaUserName">Not Valid email</mat-error><br>
+      </ng-container>
+      <textarea matInput placeholder="Password" class="textareaPassword" required   [(ngModel)]="model.password" #password="ngModel"  ngModel   pattern="[A-Za-z0-9]*" name="password " ></textarea><br>
+      <ng-container *ngIf="(!password.valid && password.touched)">
+        <mat-error  class="textareaUserName" >Not Valid password</mat-error><br></ng-container>
+    </div>
+      <button type="submit"   (click)="onSubmit(fromcontrol )" form="tdfLoginForm" [disabled]="fromcontrol.invalid"  mat-button color="primary" >Submit</button>
+      <br> <span appCustomDirectives ><a class="resetPassowrdCSS" (click)="resetPassword()">Reset Password</a></span>
+      </form>
+  </mat-card>
+</div>
+<strong>{{errorMsg}}</strong>
+<mat-card class="bindedOutput">
+<small>
+  UserName: {{model.userName}}<br>
+  Password: {{model.password}}
+</small>
+
+</mat-card>
+<!--
+<ul *ngFor = "let data of httpData">
+  <li> Name : {{data.email}} ID: {{data.id}}</li>
+</ul>
+<ul>
+  <li>{{value.name}}</li>
+</ul>
+-->
+
+

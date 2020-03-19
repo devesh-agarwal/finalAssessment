@@ -1,0 +1,21 @@
+.classForm {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+full-width {
+  width: 100%;
+}
+.cardClass{
+  margin-top: 10%;
+  width: 100%;
+  border-bottom-color: red;
+  layout-align : center;
+  align-content : center;
+  max-width: border-box;
+  border-color: blueviolet;
+}
+.inputValuesClass{
+  width: 100%;
+}

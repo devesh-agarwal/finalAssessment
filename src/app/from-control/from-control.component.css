@@ -1,0 +1,37 @@
+.bindedOutput{
+  text-align: left;
+  font-size: 10px;
+  size: 5px;
+}
+.loginValues{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 90px;
+  text-align: center;
+  background-color: cornflowerblue;
+}
+.loginSubmitButton{
+  color: #0000ff;
+  width: 100%;
+}
+h1{
+  text-align: center;
+}
+.resetPassowrdCSS{
+  font-size: xx-small;
+  width: 100%;
+}
+
+.textareaUserName{
+  width: 100%;
+}
+.textareaPassword{
+  width: 100%;
+}
+.mat-button{
+  width: 100%;
+}
+.form-group{
+  width: 100%;
+}
